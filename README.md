@@ -3,8 +3,8 @@
 :smile: 산업융합형 인공지능 청년혀신가 양성 과정 :smile:
 
 :point_right: 모듈1 : C프로그래밍  
-:point_right: 로켓펀치 : https://www.rocketpunch.com/@jhs931224  
-:point_right: 백준링크 : https://www.acmicpc.net/user/javaguy  
+:point_right: 조한슬 블로그 : https://backstreet-programmer.tistory.com/  
+:point_right: 김정현 블로그 : https://kimmitator.tistory.com/
 
 머신건 팀(5Works)의 학습한 내용을 공유하는 repository입니다.
 
