@@ -11,5 +11,5 @@
 :bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb:
 
 
-:facepunch: 2020년 5월 15일 금, 9장 포인터까지 실습완료. 팀프로젝트를 통한, 함수 및 배열 파라미터 실습
+:facepunch: 2020년 5월 15일 금, 9장 포인터까지 실습완료. 팀프로젝트를 통한, 함수 및 배열 파라미터 실습  
 :point_right: 과제 : 10 ~ 19장 과제 주말 간 실습완료할 것.
