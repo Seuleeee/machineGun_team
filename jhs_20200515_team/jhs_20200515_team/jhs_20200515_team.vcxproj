@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="learn_pointer.h" />
     <ClInclude Include="quick_sort.h" />
     <ClInclude Include="team_function.h" />
   </ItemGroup>
