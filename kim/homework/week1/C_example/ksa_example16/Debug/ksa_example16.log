@@ -1,0 +1,11 @@
+﻿  example16-6.c
+  main.c
+C:\Users\kimmitator\source\repos\ksa_example16\main.c(19,12): warning C4013: 'example1'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example16\main.c(23,12): warning C4013: 'example2'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example16\main.c(27,12): warning C4013: 'example3'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example16\main.c(31,12): warning C4013: 'example4'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example16\main.c(35,12): warning C4013: 'example5'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example16\main.c(39,12): warning C4013: 'example6'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example16\main.c(10,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  코드를 생성하고 있습니다...
+  ksa_example16.vcxproj -> C:\Users\kimmitator\source\repos\ksa_example16\Debug\ksa_example16.exe
