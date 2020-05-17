@@ -1,0 +1,4 @@
+﻿  main.c
+C:\Users\BRYANT\source\repos\jhs_20200516_chap10\array_and_pointer.h(70,9): warning C4477: 'printf' : 서식 문자열 '%u'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
+C:\Users\BRYANT\source\repos\jhs_20200516_chap10\array_and_pointer.h(71,9): warning C4477: 'printf' : 서식 문자열 '%u'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
+  jhs_20200516_chap10.vcxproj -> C:\Users\BRYANT\source\repos\jhs_20200516_chap10\Debug\jhs_20200516_chap10.exe
