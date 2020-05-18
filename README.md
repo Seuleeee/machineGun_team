@@ -2,7 +2,7 @@
 
 :smile: 산업융합형 인공지능 청년혁신가 양성 과정 :smile:
 
-:point_right: 모듈1 : C프로그래밍  
+:point_right: C프로그래밍 진행 중 (week2)  
 :point_right: 조한슬 블로그 : https://backstreet-programmer.tistory.com/  
 :point_right: 김정현 블로그 : https://kimmitator.tistory.com/
 
