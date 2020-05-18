@@ -1,4 +1,0 @@
-﻿  main.c
-C:\Users\BRYANT\source\repos\jhs_20200517_chap17\main.c(234,9): warning C4477: 'printf' : 서식 문자열 '%.1lf'에 'double' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
-C:\Users\BRYANT\source\repos\jhs_20200517_chap17\main.c(235,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'double'입니다.
-  jhs_20200517_chap17.vcxproj -> C:\Users\BRYANT\source\repos\jhs_20200517_chap17\Debug\jhs_20200517_chap17.exe
