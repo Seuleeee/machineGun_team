@@ -1,6 +1,0 @@
-﻿  point.c
-  19.c
-c:\users\user\desktop\새 폴더\consoleapplication2\consoleapplication2\point.h(5): error C2371: 'Point': 재정의. 기본 형식이 다릅니다.
-  c:\users\user\desktop\새 폴더\consoleapplication2\consoleapplication2\point.h(5): note: 'Point' 선언을 참조하십시오.
-c:\users\user\desktop\새 폴더\consoleapplication2\consoleapplication2\19.c(214): fatal error C1004: 예기치 않은 파일의 끝이 나타났습니다.
-  코드를 생성하고 있습니다...
