@@ -1,0 +1,2 @@
+C:\Users\kimmitator\source\repos\ksa_example19\Debug\ksa_example19.exe
+C:\Users\kimmitator\source\repos\ksa_example19\Debug\ksa_example19.pdb

@@ -1,0 +1,9 @@
+﻿  main.c
+C:\Users\kimmitator\source\repos\ksa_example10\main.c(10,12): warning C4013: 'example1'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example10\main.c(14,12): warning C4013: 'example2'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example10\main.c(18,12): warning C4013: 'example3'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example10\main.c(22,12): warning C4013: 'example4'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example10\main.c(26,12): warning C4013: 'example5'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example10\main.c(30,12): warning C4013: 'example6'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\kimmitator\source\repos\ksa_example10\main.c(34,12): warning C4013: 'example7'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  ksa_example10.vcxproj -> C:\Users\kimmitator\source\repos\ksa_example10\Debug\ksa_example10.exe
