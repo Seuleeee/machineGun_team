@@ -105,13 +105,21 @@ void print_list(team_info* list, int list_len)
 {
 	int i;
 	FILE* fp;
-	fp = fopen("result.txt", "wb");
+	fp = fopen("result.txt", "a+");
+
+	if (fp == NULL)
+	{
+		printf("파일을 만들지 못했습니다.\n");
+		return 1;
+	}
+
 	for (i = 0; i < list_len; i++)
 	{
 		fprintf(fp, "%-5d  %-20s\t  %-20s\n", (list + i)->team_id, (list + i)->team_name, (list + i)->corp_name);
 	}
+	fprintf(fp, "%s  %s\n\n", __DATE__, __TIME__);
+	fflush(fp);
 	fclose(fp);
-
 
 	for (i = 0; i < list_len; i++)
 	{
