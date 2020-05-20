@@ -11,8 +11,8 @@
 :bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb:
 
 ### 해야할 일
-#### 1. csv파일의 data를 읽어와 검색이 가능한 프로그램 개발, 팀장 교수님께 제출(5.22, 금) 
-#### 2. 공모전 참가신청서 교수님께 confirm, 팀장(5.20, 수) 
+#### 1. 공모전 참가신청서 교수님께 confirm, 팀장(5.20, 수) Clear   
+#### 2. csv파일의 data를 읽어와 검색이 가능한 프로그램 개발, 팀장 교수님께 제출(5.29, 금)  
 #### 3. 특허작성 Idea 정리, 팀장 교수님께 제출(5.29, 금)  
 :bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb:
   
