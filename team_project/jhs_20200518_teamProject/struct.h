@@ -1,16 +1,19 @@
 #pragma once
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
 
 typedef struct team_info
 {
-	int team_id;
-	char team_name[80];
+	char leader_yn[20];
 	char corp_name[80];
+	char name[80];
+	char email[80];
+	char univ[80];
+	char major[80];
 }team_info;
 
-void select_menu(team_info* list, int list_len);
-void sortByTeamId(team_info* list, int list_len);
-void sortByTeamName(team_info* list, int list_len);
-void sortByCorpName(team_info* list, int list_len);
-void print_list(team_info* list, int list_len);
+int file_open();
+void change_str(char str[][1024], char find_str);
+void arr_delete(char str[][1024], char find_str);
+void arr_token(char str[][1024], char find_str);
+void info_save(char str[][1024], team_info info[24]);
+void search(team_info info[24]);
+void search_team_info(team_info info[24], char str);

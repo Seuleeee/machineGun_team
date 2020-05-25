@@ -2,128 +2,309 @@
 #include <stdio.h>
 #include <string.h>
 #include "struct.h"
+#include <memory.h>
 
-void select_menu(team_info* list, int list_len)
+int file_open()
 {
-	int menu_num;
-	printf("==== 메뉴를 선택해 주세요.====\n");
-	printf("====   (예시 : 1 Enter )  ====\n");
-	printf("==== 1. 팀아이디 순 정렬 =====\n");
-	printf("==== 2. 팀 이름  순 정렬 =====\n");
-	printf("==== 3. 회사이름 순 정렬 =====\n");
-	printf("==== 4. 종            료 =====\n");
-	printf("==============================\n");
+    FILE* ifp;
+    int ch;
+    char str[500][1024];
+    int count = 0;
+    int info_count = 0;
+    char* word;
+    team_info info[24];
 
-	scanf_s("%d", &menu_num);
-	printf("\n");
+    ifp = fopen("D:\\result\\서울반 교육생 명단_한국표준협회.csv", "r");
 
-	switch
-		(menu_num)
-	{
-	case 1:
-		printf("팀 아이디 순 정렬입니다.\n");
-		sortByTeamId(list, list_len);
-		break;
-	case 2:
-		printf("팀 이름 순 정렬입니다.\n");
-		sortByTeamName(list, list_len);
-		break;
-	case 3:
-		printf("회사이름 순 정렬입니다.\n");
-		sortByCorpName(list, list_len);
-		break;
-	case 4:
-		printf("프로그램을 종료합니다.\n");
-		exit(0);
-		break;
-	default:
-		break;
-	}
+    if (ifp == NULL)
+    {
+        printf("파일이 열리지 않았습니다.\n");
+        return 1;
+    }
+
+    while (1)
+    {
+
+        word = fgets(str[count], 1024, ifp);
+
+        if (word == NULL)
+        {
+            break;
+        }
+
+        count++;
+
+    }
+
+    arr_delete(str, '?');
+    change_str(str, ',');
+    arr_token(str, ',');
+    arr_delete(str, '\"');
+    info_save(str, info);
+    search(info);
+    fclose(ifp);
+
+};
+
+void change_str(char str[][1024], char find_str)
+{
+    int i, j;
+
+    for (i = 1; i < 425; i++)
+    {
+        for (j = 0; j < 1023; j++)
+        {
+            if (str[i][j] == find_str)
+            {
+                if (str[i][j + 1] == find_str)
+                {
+                    str[i][j] = '\0';
+                }
+            }
+        }
+    }
 
 
-	return;
 }
 
-void sortByTeamId(team_info* list, int list_len)
+void arr_delete(char str[][1024], char find_str)
 {
-	int i, j;
-	team_info tmp;
-	for (i = 0; i < list_len; i++)
-	{
-		for (j = 0; j < list_len - i - 1; j++)
-		{
-			if (list[j].team_id > list[j + 1].team_id)
-			{
-				tmp = list[j];
-				list[j] = list[j + 1];
-				list[j + 1] = tmp;
-			}
-		}
-	}
-	print_list(list, list_len);
+    int i, j;
+
+    for (i = 1; i < 425; i++)
+    {
+        for (j = 0; j < 1024; j++)
+        {
+            if (str[i][j] == find_str)
+            {
+                memmove(str[i] + j, str[i] + j + 1, strlen(str[i]) - j);
+            }
+        }
+    }
 }
 
-void sortByTeamName(team_info* list, int list_len)
+void arr_token(char str[][1024], char find_str)
 {
-	int i, j;
-	team_info tmp;
-	for (i = 0; i < list_len; i++)
-	{
-		for (j = 0; j < list_len - i - 1; j++)
-		{
-			if (strcmp(list[j].team_name, list[j + 1].team_name) > 0)
-			{
-				tmp = list[j];
-				list[j] = list[j + 1];
-				list[j + 1] = tmp;
-			}
-		}
-	}
-	print_list(list, list_len);
+    int i, j;
+    int count = 0;
+
+    for (i = 1; i < 425; i++)
+    {
+        for (j = 0; j < 1024; j++)
+        {
+            if (str[i][0] == ',')
+            {
+                str[i][0] = '\n';
+            }
+            else
+            {
+                if (str[i][j] == '\"')
+                {
+                    count++;
+                    if (count == 2)
+                    {
+                        count = 0;
+
+                    }
+                }
+                else if (count == 0 && str[i][j] == find_str)
+                {
+                    str[i][j] = '\n';
+                }
+            }
+
+        }
+    }
 }
 
-void sortByCorpName(team_info* list, int list_len)
+void info_save(char str[][1024], team_info info[24])
 {
-	int i, j;
-	team_info tmp;
-	for (i = 0; i < list_len; i++)
-	{
-		for (j = 0; j < list_len - i - 1; j++)
-		{
-			if (strcmp(list[j].corp_name, list[j + 1].corp_name) > 0)
-			{
-				tmp = list[j];
-				list[j] = list[j + 1];
-				list[j + 1] = tmp;
-			}
-		}
-	}
-	print_list(list, list_len);
+    int i;
+    int info_count = 0;
+
+    for (i = 1; i < 425; i++)
+    {
+        if (str[i][0] != '\0')
+        {
+
+            int sc = 0;
+
+            char* ptr = strtok(str[i], "\n");
+            while (ptr != NULL)
+            {
+                switch (sc)
+                {
+                case 0:
+                    if (str[i][0] == '\n')
+                    {
+                        strcpy(info[info_count].leader_yn, "조원");
+                        sc++;
+                    }
+                    else
+                    {
+                        strcpy(info[info_count].leader_yn, "조장");
+                        sc++;
+                        break;
+                    }
+                case 1:
+                    strcpy(info[info_count].corp_name, ptr);
+                    sc++;
+                    break;
+                case 2:
+                    strcpy(info[info_count].name, ptr);
+                    sc++;
+                    break;
+                case 3:
+                    strcpy(info[info_count].email, ptr);
+                    sc++;
+                    break;
+                case 4:
+                    strcpy(info[info_count].univ, ptr);
+                    sc++;
+                    break;
+                case 5:
+                    strcpy(info[info_count].major, ptr);
+                    sc++;
+                    break;
+                }
+                ptr = strtok(NULL, "\n");
+
+            }
+            info_count++;
+        }
+    }
 }
 
-void print_list(team_info* list, int list_len)
+void search(team_info info[24])
 {
-	int i;
-	FILE* fp;
-	fp = fopen("result.txt", "a+");
+    char str[80];
+    printf("검색할 단어를 입력하세요. : ");
+    scanf("%s", str);
 
-	if (fp == NULL)
-	{
-		printf("파일을 만들지 못했습니다.\n");
-		return 1;
-	}
+    int i;
+    for (i = 0; i < 24; i++)
+    {
+        if (strcmp(info[i].corp_name, str) == 0)
+        {
+            printf("%s, ", info[i].leader_yn);
+            printf("%s, ", info[i].corp_name);
+            printf("%s, ", info[i].name);
+            printf("%s, ", info[i].email);
+            printf("%s, ", info[i].univ);
+            printf("%s\n", info[i].major);
 
-	for (i = 0; i < list_len; i++)
-	{
-		fprintf(fp, "%-5d  %-20s\t  %-20s\n", (list + i)->team_id, (list + i)->team_name, (list + i)->corp_name);
-	}
-	fprintf(fp, "%s  %s\n\n", __DATE__, __TIME__);
-	fflush(fp);
-	fclose(fp);
+        }
 
-	for (i = 0; i < list_len; i++)
-	{
-		printf("%-5d  %-20s\t  %-20s\n", (list + i)->team_id, (list + i)->team_name, (list + i)->corp_name);
-	}
-	printf("\n");
+        else if (strcmp(info[i].name, str) == 0)
+        {
+            printf("%s, ", info[i].leader_yn);
+            printf("%s, ", info[i].corp_name);
+            printf("%s, ", info[i].name);
+            printf("%s, ", info[i].email);
+            printf("%s, ", info[i].univ);
+            printf("%s\n", info[i].major);
+
+            if (strcmp(info[i].leader_yn, "조장") == 0)
+            {
+                int j;
+                for (j = i + 1; j < i + 4; j++)
+                {
+                    printf("%s, ", info[j].leader_yn);
+                    printf("%s, ", info[j].corp_name);
+                    printf("%s, ", info[j].name);
+                    printf("%s, ", info[j].email);
+                    printf("%s, ", info[j].univ);
+                    printf("%s\n", info[j].major);
+                }
+            }
+
+        }
+
+        else if (strcmp(info[i].major, str) == 0)
+        {
+            printf("%s, ", info[i].leader_yn);
+            printf("%s, ", info[i].corp_name);
+            printf("%s, ", info[i].name);
+            printf("%s, ", info[i].email);
+            printf("%s, ", info[i].univ);
+            printf("%s\n", info[i].major);
+
+            if (strcmp(info[i].leader_yn, "조장") == 0)
+            {
+                int j;
+                for (j = i + 1; j < i + 4; j++)
+                {
+                    printf("%s, ", info[j].leader_yn);
+                    printf("%s, ", info[j].corp_name);
+                    printf("%s, ", info[j].name);
+                    printf("%s, ", info[j].email);
+                    printf("%s, ", info[j].univ);
+                    printf("%s\n", info[j].major);
+                }
+            }
+
+        }
+
+        else if (strcmp(info[i].univ, str) == 0)
+        {
+            printf("%s, ", info[i].leader_yn);
+            printf("%s, ", info[i].corp_name);
+            printf("%s, ", info[i].name);
+            printf("%s, ", info[i].email);
+            printf("%s, ", info[i].univ);
+            printf("%s\n", info[i].major);
+
+            if (strcmp(info[i].leader_yn, "조장") == 0)
+            {
+                int j;
+                for (j = i + 1; j < i + 4; j++)
+                {
+                    printf("%s, ", info[j].leader_yn);
+                    printf("%s, ", info[j].corp_name);
+                    printf("%s, ", info[j].name);
+                    printf("%s, ", info[j].email);
+                    printf("%s, ", info[j].univ);
+                    printf("%s\n", info[j].major);
+                }
+            }
+
+        }
+
+        else if (strcmp(info[i].leader_yn, str) == 0)
+        {
+            printf("%s, ", info[i].leader_yn);
+            printf("%s, ", info[i].corp_name);
+            printf("%s, ", info[i].name);
+            printf("%s, ", info[i].email);
+            printf("%s, ", info[i].univ);
+            printf("%s\n", info[i].major);
+
+
+        }
+
+        else if (strcmp(info[i].email, str) == 0)
+        {
+            printf("%s, ", info[i].leader_yn);
+            printf("%s, ", info[i].corp_name);
+            printf("%s, ", info[i].name);
+            printf("%s, ", info[i].email);
+            printf("%s, ", info[i].univ);
+            printf("%s\n", info[i].major);
+
+            if (strcmp(info[i].leader_yn, "조장") == 0)
+            {
+                int j;
+                for (j = i + 1; j < i + 4; j++)
+                {
+                    printf("%s, ", info[j].leader_yn);
+                    printf("%s, ", info[j].corp_name);
+                    printf("%s, ", info[j].name);
+                    printf("%s, ", info[j].email);
+                    printf("%s, ", info[j].univ);
+                    printf("%s\n", info[j].major);
+                }
+            }
+
+        }
+    }
 }
