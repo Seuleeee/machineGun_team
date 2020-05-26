@@ -3,6 +3,7 @@
 #include <string.h>
 #include "struct.h"
 #include <memory.h>
+#include <time.h>
 
 int file_open()
 {
@@ -178,8 +179,21 @@ void info_save(char str[][1024], team_info info[24])
 void search(team_info info[24])
 {
     char str[80];
+    time_t ltime;
+    char timebuf[26];
+    time(&ltime);
+    ctime_s(timebuf, 26, &ltime);
+
+    FILE* ofp;
     printf("검색할 단어를 입력하세요. : ");
     scanf("%s", str);
+
+    ofp = fopen("D:\\result\\result.txt", "a");
+
+    if (ofp == NULL)
+    {
+        printf("파일을 열지 못했습니다.");
+    }
 
     int i;
     for (i = 0; i < 24; i++)
@@ -187,34 +201,53 @@ void search(team_info info[24])
         if (strcmp(info[i].corp_name, str) == 0)
         {
             printf("%s, ", info[i].leader_yn);
+            fprintf(ofp, "%s, ", info[i].leader_yn);
             printf("%s, ", info[i].corp_name);
+            fprintf(ofp, "%s, ", info[i].corp_name);
             printf("%s, ", info[i].name);
+            fprintf(ofp, "%s, ", info[i].name);
             printf("%s, ", info[i].email);
+            fprintf(ofp, "%s, ", info[i].email);
             printf("%s, ", info[i].univ);
+            fprintf(ofp, "%s, ", info[i].univ);
             printf("%s\n", info[i].major);
+            fprintf(ofp, "%s\n", info[i].major);
+            
 
         }
 
         else if (strcmp(info[i].name, str) == 0)
         {
             printf("%s, ", info[i].leader_yn);
+            fprintf(ofp, "%s, ", info[i].leader_yn);
             printf("%s, ", info[i].corp_name);
+            fprintf(ofp, "%s, ", info[i].corp_name);
             printf("%s, ", info[i].name);
+            fprintf(ofp, "%s, ", info[i].name);
             printf("%s, ", info[i].email);
+            fprintf(ofp, "%s, ", info[i].email);
             printf("%s, ", info[i].univ);
+            fprintf(ofp, "%s, ", info[i].univ);
             printf("%s\n", info[i].major);
+            fprintf(ofp, "%s\n", info[i].major);
 
             if (strcmp(info[i].leader_yn, "조장") == 0)
             {
                 int j;
                 for (j = i + 1; j < i + 4; j++)
                 {
-                    printf("%s, ", info[j].leader_yn);
-                    printf("%s, ", info[j].corp_name);
-                    printf("%s, ", info[j].name);
-                    printf("%s, ", info[j].email);
-                    printf("%s, ", info[j].univ);
-                    printf("%s\n", info[j].major);
+                    printf("%s, ", info[i].leader_yn);
+                    fprintf(ofp, "%s, ", info[i].leader_yn);
+                    printf("%s, ", info[i].corp_name);
+                    fprintf(ofp, "%s, ", info[i].corp_name);
+                    printf("%s, ", info[i].name);
+                    fprintf(ofp, "%s, ", info[i].name);
+                    printf("%s, ", info[i].email);
+                    fprintf(ofp, "%s, ", info[i].email);
+                    printf("%s, ", info[i].univ);
+                    fprintf(ofp, "%s, ", info[i].univ);
+                    printf("%s\n", info[i].major);
+                    fprintf(ofp, "%s\n", info[i].major);
                 }
             }
 
@@ -223,23 +256,35 @@ void search(team_info info[24])
         else if (strcmp(info[i].major, str) == 0)
         {
             printf("%s, ", info[i].leader_yn);
+            fprintf(ofp, "%s, ", info[i].leader_yn);
             printf("%s, ", info[i].corp_name);
+            fprintf(ofp, "%s, ", info[i].corp_name);
             printf("%s, ", info[i].name);
+            fprintf(ofp, "%s, ", info[i].name);
             printf("%s, ", info[i].email);
+            fprintf(ofp, "%s, ", info[i].email);
             printf("%s, ", info[i].univ);
+            fprintf(ofp, "%s, ", info[i].univ);
             printf("%s\n", info[i].major);
+            fprintf(ofp, "%s\n", info[i].major);
 
             if (strcmp(info[i].leader_yn, "조장") == 0)
             {
                 int j;
                 for (j = i + 1; j < i + 4; j++)
                 {
-                    printf("%s, ", info[j].leader_yn);
-                    printf("%s, ", info[j].corp_name);
-                    printf("%s, ", info[j].name);
-                    printf("%s, ", info[j].email);
-                    printf("%s, ", info[j].univ);
-                    printf("%s\n", info[j].major);
+                    printf("%s, ", info[i].leader_yn);
+                    fprintf(ofp, "%s, ", info[i].leader_yn);
+                    printf("%s, ", info[i].corp_name);
+                    fprintf(ofp, "%s, ", info[i].corp_name);
+                    printf("%s, ", info[i].name);
+                    fprintf(ofp, "%s, ", info[i].name);
+                    printf("%s, ", info[i].email);
+                    fprintf(ofp, "%s, ", info[i].email);
+                    printf("%s, ", info[i].univ);
+                    fprintf(ofp, "%s, ", info[i].univ);
+                    printf("%s\n", info[i].major);
+                    fprintf(ofp, "%s\n", info[i].major);
                 }
             }
 
@@ -248,23 +293,35 @@ void search(team_info info[24])
         else if (strcmp(info[i].univ, str) == 0)
         {
             printf("%s, ", info[i].leader_yn);
+            fprintf(ofp, "%s, ", info[i].leader_yn);
             printf("%s, ", info[i].corp_name);
+            fprintf(ofp, "%s, ", info[i].corp_name);
             printf("%s, ", info[i].name);
+            fprintf(ofp, "%s, ", info[i].name);
             printf("%s, ", info[i].email);
+            fprintf(ofp, "%s, ", info[i].email);
             printf("%s, ", info[i].univ);
+            fprintf(ofp, "%s, ", info[i].univ);
             printf("%s\n", info[i].major);
+            fprintf(ofp, "%s\n", info[i].major);
 
             if (strcmp(info[i].leader_yn, "조장") == 0)
             {
                 int j;
                 for (j = i + 1; j < i + 4; j++)
                 {
-                    printf("%s, ", info[j].leader_yn);
-                    printf("%s, ", info[j].corp_name);
-                    printf("%s, ", info[j].name);
-                    printf("%s, ", info[j].email);
-                    printf("%s, ", info[j].univ);
-                    printf("%s\n", info[j].major);
+                    printf("%s, ", info[i].leader_yn);
+                    fprintf(ofp, "%s, ", info[i].leader_yn);
+                    printf("%s, ", info[i].corp_name);
+                    fprintf(ofp, "%s, ", info[i].corp_name);
+                    printf("%s, ", info[i].name);
+                    fprintf(ofp, "%s, ", info[i].name);
+                    printf("%s, ", info[i].email);
+                    fprintf(ofp, "%s, ", info[i].email);
+                    printf("%s, ", info[i].univ);
+                    fprintf(ofp, "%s, ", info[i].univ);
+                    printf("%s\n", info[i].major);
+                    fprintf(ofp, "%s\n", info[i].major);
                 }
             }
 
@@ -273,11 +330,17 @@ void search(team_info info[24])
         else if (strcmp(info[i].leader_yn, str) == 0)
         {
             printf("%s, ", info[i].leader_yn);
+            fprintf(ofp, "%s, ", info[i].leader_yn);
             printf("%s, ", info[i].corp_name);
+            fprintf(ofp, "%s, ", info[i].corp_name);
             printf("%s, ", info[i].name);
+            fprintf(ofp, "%s, ", info[i].name);
             printf("%s, ", info[i].email);
+            fprintf(ofp, "%s, ", info[i].email);
             printf("%s, ", info[i].univ);
+            fprintf(ofp, "%s, ", info[i].univ);
             printf("%s\n", info[i].major);
+            fprintf(ofp, "%s\n", info[i].major);
 
 
         }
@@ -285,26 +348,40 @@ void search(team_info info[24])
         else if (strcmp(info[i].email, str) == 0)
         {
             printf("%s, ", info[i].leader_yn);
+            fprintf(ofp, "%s, ", info[i].leader_yn);
             printf("%s, ", info[i].corp_name);
+            fprintf(ofp, "%s, ", info[i].corp_name);
             printf("%s, ", info[i].name);
+            fprintf(ofp, "%s, ", info[i].name);
             printf("%s, ", info[i].email);
+            fprintf(ofp, "%s, ", info[i].email);
             printf("%s, ", info[i].univ);
+            fprintf(ofp, "%s, ", info[i].univ);
             printf("%s\n", info[i].major);
+            fprintf(ofp, "%s\n", info[i].major);
 
             if (strcmp(info[i].leader_yn, "조장") == 0)
             {
                 int j;
                 for (j = i + 1; j < i + 4; j++)
                 {
-                    printf("%s, ", info[j].leader_yn);
-                    printf("%s, ", info[j].corp_name);
-                    printf("%s, ", info[j].name);
-                    printf("%s, ", info[j].email);
-                    printf("%s, ", info[j].univ);
-                    printf("%s\n", info[j].major);
+                    printf("%s, ", info[i].leader_yn);
+                    fprintf(ofp, "%s, ", info[i].leader_yn);
+                    printf("%s, ", info[i].corp_name);
+                    fprintf(ofp, "%s, ", info[i].corp_name);
+                    printf("%s, ", info[i].name);
+                    fprintf(ofp, "%s, ", info[i].name);
+                    printf("%s, ", info[i].email);
+                    fprintf(ofp, "%s, ", info[i].email);
+                    printf("%s, ", info[i].univ);
+                    fprintf(ofp, "%s, ", info[i].univ);
+                    printf("%s\n", info[i].major);
+                    fprintf(ofp, "%s\n", info[i].major);
                 }
             }
 
         }
     }
+    fprintf(ofp, "%s\n", timebuf);
+    fclose(ofp);
 }
