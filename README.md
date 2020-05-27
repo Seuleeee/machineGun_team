@@ -24,3 +24,7 @@
  
 :facepunch: 2020년 5월 19일 화, CSV파일을 읽어와 구조체를 활용해 정보를 검색하고 출력하는 프로그램 개발  
 :point_right::point_right::point_right: 과제 : 5.29까지 교수님께 파일 압축 및 github URL 메일 송부
+
+
+:facepunch: 2020년 5월 27일 수, TOPCIT 소프트웨어 공학  
+:point_right::point_right::point_right: 과제 : 금일, 교수님께 파일 압축 및 github URL 메일 송부
