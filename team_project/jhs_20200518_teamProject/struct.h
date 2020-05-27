@@ -16,4 +16,3 @@ void arr_delete(char str[][1024], char find_str);
 void arr_token(char str[][1024], char find_str);
 void info_save(char str[][1024], team_info info[24]);
 void search(team_info info[24]);
-void search_team_info(team_info info[24], char str);
