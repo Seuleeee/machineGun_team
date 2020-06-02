@@ -3,7 +3,7 @@
 :smile: 산업융합형 인공지능 청년혁신가 양성 과정 :smile:
 
 :point_right: C프로그래밍 진행, Linux, mariaDB, CharSet (week2)  
-:point_right: TOPCIT 강의 진행 중 (week3)  
+:point_right: TOPCIT 강의 진행 중 (week4)  
 :point_right: 조한슬 블로그 : https://backstreet-programmer.tistory.com/  
 :point_right: 이동준 블로그 : https://scvzl.tistory.com/  
 :point_right: 김정현 블로그 : https://kimmitator.tistory.com/
@@ -12,11 +12,9 @@
 
 :bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb:
 
-### 해야할 일
-#### 1. 공모전 참가신청서 교수님께 confirm, 팀장(5.20, 수) Clear   
-#### 2. csv파일의 data를 읽어와 검색이 가능한 프로그램 개발, 팀장 교수님께 제출(5.29, 금) Clear  
-#### 3. 특허작성 최종안 제출, 팀장 교수님께 제출(5.29, 금) => 6.3(수)로 변경  
-#### 4. 특허출원 양식 초안 작성, 5.29(금) 오후 2시, 5Works 대면 피드백  
+### 해야할 일  
+#### 1. 특허작성 최종안 제출, 팀장 교수님께 제출(5.29, 금) => 6.3(수)로 변경  
+#### 2. 포트폴리오 초안작성, 6.11(목)  
 :bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb:
   
 :facepunch: 2020년 5월 15일 금, 9장 포인터까지 실습완료. 팀프로젝트를 통한, 함수 및 배열 파라미터 실습  
