@@ -5,6 +5,7 @@
 :point_right: C프로그래밍 진행, Linux, mariaDB, CharSet (week2)  
 :point_right: TOPCIT 강의 진행 중 (week3)  
 :point_right: 조한슬 블로그 : https://backstreet-programmer.tistory.com/  
+:point_right: 이동준 블로그 : https://scvzl.tistory.com/  
 :point_right: 김정현 블로그 : https://kimmitator.tistory.com/
 
 머신건 팀(5Works)의 학습한 내용을 공유하는 repository입니다.
