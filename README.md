@@ -13,8 +13,7 @@
 :bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb:
 
 ### 해야할 일  
-#### 1. 특허작성 최종안 제출, 팀장 교수님께 제출(5.29, 금) => 6.3(수)로 변경  
-#### 2. 포트폴리오 초안작성, 6.11(목)  
+#### 1. 포트폴리오 초안작성, 6.11(목) - 팀 내부 결의(6.8(월) 한)  
 :bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb::bulb:
   
 :facepunch: 2020년 5월 15일 금, 9장 포인터까지 실습완료. 팀프로젝트를 통한, 함수 및 배열 파라미터 실습  
